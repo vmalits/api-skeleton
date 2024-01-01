@@ -56,5 +56,9 @@ shell:
 test:
 	./vendor/bin/sail test
 
+# Run pint
+pint:
+	./vendor/bin/pint
+
 # Default target
 default: start
