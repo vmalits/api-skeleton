@@ -6,13 +6,13 @@ namespace App\Http\Responses;
 
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
-use Symfony\Component\HttpFoundation\Response as ResponseAlias;
+use JustSteveKing\StatusCode\Http;
 
 readonly class MessageResponse implements Responsable
 {
     public function __construct(
         private array|string $data,
-        private int $status = ResponseAlias::HTTP_OK,
+        private Http $status = Http::OK,
         private string $key = 'message'
     ) {
     }

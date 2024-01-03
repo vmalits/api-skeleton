@@ -60,5 +60,9 @@ test:
 pint:
 	./vendor/bin/pint
 
+# Show routes
+route:
+	./vendor/bin/sail artisan route:list
+
 # Default target
 default: start
