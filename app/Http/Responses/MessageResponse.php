@@ -23,7 +23,7 @@ readonly class MessageResponse implements Responsable
             data: [
                 $this->key => $this->data,
             ],
-            status: $this->status,
+            status: $this->status->value,
         );
     }
 }

@@ -1,4 +1,4 @@
-name: Endpoints
+name: Healthcheck
 description: ''
 endpoints:
   -
@@ -6,7 +6,7 @@ endpoints:
       - GET
     uri: api/v1/ping
     metadata:
-      groupName: Endpoints
+      groupName: Healthcheck
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
@@ -32,80 +32,10 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
+          x-ratelimit-remaining: '35'
           access-control-allow-origin: '*'
         description: null
         custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/auth/register
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      first_name:
-        name: first_name
-        description: 'First Name. Must be at least 2 characters. Must not be greater than 255 characters.'
-        required: true
-        example: John
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      last_name:
-        name: last_name
-        description: 'Last Name. Must be at least 2 characters. Must not be greater than 255 characters.'
-        required: true
-        example: Doe
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      email:
-        name: email
-        description: 'Email. Must be a valid email address.'
-        required: true
-        example: john@doe
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: Password.
-        required: false
-        example: yqy5bjd7vkg@ckm5THG
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      first_name: John
-      last_name: Doe
-      email: john@doe
-      password: yqy5bjd7vkg@ckm5THG
-    fileParameters: []
-    responses: []
     responseFields: []
     auth: []
     controller: null

@@ -64,5 +64,10 @@ pint:
 route:
 	./vendor/bin/sail artisan route:list
 
+# Generate Docs
+docs:
+	./vendor/bin/sail artisan scribe:generate
+
+
 # Default target
 default: start
