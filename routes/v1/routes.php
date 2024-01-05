@@ -12,3 +12,7 @@ Route::prefix('ping')->as('ping:')->group(
 Route::prefix('auth')->as('auth:')->group(
     base_path('routes/v1/auth.php')
 );
+
+Route::prefix('users')->as('users:')->group(
+    base_path('routes/v1/users.php')
+);
