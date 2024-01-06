@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "e28313fe-3919-45f8-8b62-2a4bbe23a74d",
+        "_postman_id": "bbb866fe-838a-452d-a0d4-cc6ffedf3e2f",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -176,7 +176,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":27,\"first_name\":\"Weldon\",\"last_name\":\"Brakus\",\"email_verified_at\":\"2024-01-05T19:44:20.000000Z\",\"created_at\":\"2024-01-05T19:44:21.000000Z\",\"updated_at\":\"2024-01-05T19:44:21.000000Z\"},{\"id\":28,\"first_name\":\"Delphine\",\"last_name\":\"Considine\",\"email_verified_at\":\"2024-01-05T19:44:21.000000Z\",\"created_at\":\"2024-01-05T19:44:21.000000Z\",\"updated_at\":\"2024-01-05T19:44:21.000000Z\"}],\"links\":{\"first\":\"\\\/?page=1\",\"last\":\"\\\/?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"\\\/?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"\\\/\",\"per_page\":10,\"to\":2,\"total\":2}}",
+                            "body": "{\"data\":{\"id\":14,\"first_name\":\"Boris\",\"last_name\":\"Lueilwitz\",\"email\":\"tillman.ophelia@example.net\",\"email_verified_at\":\"2024-01-05T20:01:06.000000Z\",\"created_at\":\"2024-01-05T20:01:06.000000Z\",\"updated_at\":\"2024-01-05T20:01:06.000000Z\"}}",
                             "name": ""
                         }
                     ]
@@ -185,6 +185,12 @@
         }
     ],
     "auth": {
-        "type": "noauth"
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "key",
+                "type": "string"
+            }
+        ]
     }
 }
