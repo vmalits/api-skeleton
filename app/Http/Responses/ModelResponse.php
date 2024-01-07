@@ -6,14 +6,14 @@ namespace App\Http\Responses;
 
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 use JustSteveKing\StatusCode\Http;
 
-readonly class CollectionResponse implements Responsable
+readonly class ModelResponse implements Responsable
 {
     public function __construct(
-        private array|ResourceCollection|AnonymousResourceCollection $data,
+        private JsonResource $data,
+        private string $key,
         private Http $status = Http::OK
     ) {
     }
@@ -21,8 +21,10 @@ readonly class CollectionResponse implements Responsable
     public function toResponse($request): JsonResponse
     {
         return new JsonResponse(
-            data: $this->data,
-            status: $this->status->value
+            data: [
+                $this->key => $this->data,
+            ],
+            status: $this->status->value,
         );
     }
 }
