@@ -115,40 +115,82 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 14
-                    first_name: Boris
-                    last_name: Lueilwitz
-                    email: tillman.ophelia@example.net
-                    email_verified_at: '2024-01-05T20:01:06.000000Z'
-                    created_at: '2024-01-05T20:01:06.000000Z'
-                    updated_at: '2024-01-05T20:01:06.000000Z'
+                    id: 18
+                    uuid: d3e1995b-f712-4606-a365-8b564157f22d
+                    first_name: Declan
+                    last_name: Wolf
+                    email: morissette.jaylen@example.org
+                    email_verified_at: '2024-01-09T20:25:31.000000Z'
+                    created_at: '2024-01-09T20:25:31.000000Z'
+                    updated_at: '2024-01-09T20:25:31.000000Z'
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: integer
-                        example: 14
+                        example: 18
+                      uuid:
+                        type: string
+                        example: d3e1995b-f712-4606-a365-8b564157f22d
                       first_name:
                         type: string
-                        example: Boris
+                        example: Declan
                       last_name:
                         type: string
-                        example: Lueilwitz
+                        example: Wolf
                       email:
                         type: string
-                        example: tillman.ophelia@example.net
+                        example: morissette.jaylen@example.org
                       email_verified_at:
                         type: string
-                        example: '2024-01-05T20:01:06.000000Z'
+                        example: '2024-01-09T20:25:31.000000Z'
                       created_at:
                         type: string
-                        example: '2024-01-05T20:01:06.000000Z'
+                        example: '2024-01-09T20:25:31.000000Z'
                       updated_at:
                         type: string
-                        example: '2024-01-05T20:01:06.000000Z'
+                        example: '2024-01-09T20:25:31.000000Z'
       tags:
         - Users
+  '/api/v1/users/{uuid}':
+    get:
+      summary: ''
+      operationId: getApiV1UsersUuid
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Users
+    delete:
+      summary: ''
+      operationId: deleteApiV1UsersUuid
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Users
+    parameters:
+      -
+        in: path
+        name: uuid
+        description: ''
+        example: 80c4d732-1106-3c34-9295-69c31b06ae90
+        required: true
+        schema:
+          type: integer
 tags:
   -
     name: Auth

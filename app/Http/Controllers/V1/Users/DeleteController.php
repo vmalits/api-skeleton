@@ -29,8 +29,7 @@ class DeleteController extends Controller
 
         return new MessageResponse(
             data: [],
-            status: Http::ACCEPTED,
-            key: 'user'
+            status: Http::NO_CONTENT,
         );
     }
 }

@@ -9,10 +9,22 @@ use JustSteveKing\StatusCode\Http;
 
 uses(RefreshDatabase::class);
 
+it('deletes a user and returns the correct status code', function () {
+    $user = User::factory()->create();
 
-it('returns the correct status code', function () {
-    $user = User::factory(1)->create()->first();
-    $this->actingAs($user);
-    $this->getJson(action(DeleteController::class, ['uuid' => $user->uuid]))
-        ->assertStatus(status: Http::ACCEPTED->value);
+    $uuid = $user->uuid;
+    $this->actingAs($user)
+        ->deleteJson(action(DeleteController::class, ['uuid' => $uuid]))
+        ->assertStatus(Http::NO_CONTENT->value);
+});
+
+
+it('returns 401 if user is not authenticated', function () {
+    $user = User::factory()->create();
+
+    $this->deleteJson(action(DeleteController::class, ['uuid' => $user->uuid]))
+        ->assertStatus(Http::UNAUTHORIZED->value)
+        ->assertJson([
+            'message' => 'Unauthenticated.',
+        ]);
 });
